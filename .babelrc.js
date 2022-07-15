@@ -3,6 +3,7 @@ const isProd = String(process.env.NODE_ENV) === 'production'
 
 module.exports = {
   presets: [
+    // if we're in test use commonjs imports, otherwise, don't
     ['@babel/preset-env', {modules: isTest ? 'commonjs' : false}],
     '@babel/preset-react',
     [
